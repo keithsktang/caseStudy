@@ -1,50 +1,247 @@
+$chewy-blue: #128CED;
+$chewy-grey: #5f5f5f;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 html {
   box-sizing: border-box;
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #5f5f5f;
+    .icon {
+      display: flex;
+      height: 80px;
+      align-items: flex-end;
+      justify-content: center;
+    }
+  }
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+body, img {
+    transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
 }
 
 .container {
-  margin: 0 auto;
-  padding: 0 10px;
-  max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    .center {
+      text-align: center;
+    }
+
+    .header {
+        text-align: center;
+        font-size: 2.5em;
+        color: black;
+    }
 }
 
 .row::before,
 .row::after {
-  display: table;
-  content: " ";
-  clear: both;
+    display: table;
+    content: " ";
+    clear: both;
 }
+
+.facts {
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    .num {
+      font-size: 3.5em;
+      margin-right: -2px;
+    }
+    .plus {
+      font-size: 1.5em;
+    }
+  }
+  .stats-text {
+    white-space: normal;
+    padding: 0 10%;
+  }
+}
+
+.promise {
+    padding: 30px 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 300px;
+    white-space: normal;
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.content-heads {
+    color: #128CED;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
+
+.content-pics {
+    display: inline-block;
+    height: 300px;
+}
+
+    .content-pics img {
+        box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+        width: 300px;
+    }
+
+        .content-pics img:hover {
+            -webkit-box-shadow: 0px 35px 30px -25px rgba(0, 0, 0, 0.4);
+            transform: translate(0px, -10px);
+        }
+
+// Alternate the content and pic position
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-rev {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+/* Mobile first styles starts here */
 .one,
 .one-third,
 .two-thirds,
 .one-fourth,
 .half {
-  width: 100%;
+    width: 100%;
+    .half {
+        width: calc(100% / 2);
+    }
+
 }
 
-/* Mobile first styles go here */
-
-@media screen and (min-width: 800px) {
-  /* Desktop styles go here */
-  .one {
-    width: 100%;
-  }
-  .half {
-    width: calc(100% / 2);
-  }
-  .one-third {
-    width: calc(100% / 3);
-  }
-  .one-fourth {
-    width: calc(100% / 4);
-  }
-  .two-thirds {
-    width: calc(100% / 3 * 2);
-  }
-  .column {
+.column {
     float: left;
-  }
+}
+
+.content-pics img {
+    width: 300px;
+}
+
+/* Medium styles starts here */
+@media screen and (min-width: 600px) {
+    .container {
+        margin: 0 auto;
+        padding: 0 100px;
+        max-width: 1000px;
+    }
+
+    .content-pics img {
+        width: 320px;
+    }
+}
+
+/* Ipad styles starts here */
+@media screen and (min-width: 800px) {
+
+    .promise {
+        padding: 60px 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 0 60px;
+        max-width: 1000px;
+    }
+
+    .content {
+        max-width: 480px;
+        margin: initial;
+    }
+
+
+    .content-left {
+        padding-left: 16%;
+        padding-right: 10%;
+    }
+
+    .content-right {
+        padding-right: 16%;
+        padding-left: 10%;
+    }
+
+    .one {
+        width: 100%;
+    }
+
+    .half {
+        width: calc(100% / 2);
+    }
+
+    .one-third {
+        width: calc(100% / 3);
+    }
+
+    .one-fourth {
+        width: calc(100% / 4);
+    }
+
+    .two-thirds {
+        width: calc(100% / 3 * 2);
+    }
+
+    .column {
+        float: left;
+    }
+
+    .content-pics {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .content-pics img {
+            width: 360px;
+        }
+}
+
+/* Desk styles starts here */
+@media screen and (min-width: 1200px) {
+    .promise {
+        padding: 100px 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 0 120px;
+        max-width: 1600px;
+    }
+
+    .content-left {
+        padding-left: 12%;
+        padding-right: 15%;
+    }
+
+    .content-right {
+        padding-right: 12%;
+        padding-left: 15%;
+    }
+
+    .content-pics img {
+        width: 450px;
+    }
 }
